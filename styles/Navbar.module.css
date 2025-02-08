@@ -1,0 +1,109 @@
+.nav{
+    background-color: white;
+    padding-bottom: 5px;
+}
+
+.nav1{
+    box-shadow: 0 10px 15px -13px rgba(0,0,0, 0.1),
+    0 4px 6px -2px rgba(0,0,0, 0.05);
+    border-radius: 12px;
+    border-style: solid;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 8px;
+}
+
+
+
+/*  */
+
+.nav_container{
+    display: flex;
+   /* margin-left: 30px; */
+   align-content: space-between;
+   background-color: white;
+   color: black;
+   gap: 140px;
+   align-items: center;
+   /* justify-content: center; */
+   margin-top: 15px;
+   padding-left: 44px;
+   padding-right: 44px;
+}
+
+.nav_left{
+    display: flex;
+    margin-left: 30px;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+}
+
+.nav_right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin-right: 20px;
+}
+
+.nav_right ul{
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    color: black;
+ 
+}
+
+.nav_right ul li a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav_button_container{
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+.nav_button_container button{
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 200px; */
+    padding-left: 30px;
+    gap: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-size: 12px;
+}
+
+.navicon1{
+    width: 300px;
+    height: 30px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    
+
+    .nav_left{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-left: 0px;
+       
+        /* padding-left: 5px;
+        padding-right: 10px; */
+    }
+ 
+    .nav_right{
+        display: none;
+    }
+
+  }
