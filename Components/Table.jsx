@@ -1,5 +1,8 @@
 import React from "react";
 
+//Internal Import
+
+import Style from "../styles/Table.module.css"
 
 
 const Table = ({
@@ -27,34 +30,35 @@ console.log(allSShipmentData);
 
 
   return (
-    <div>
-      <div>
-        <div>
+    <div className={Style.container}>
+      <div className={Style.container_header}>
+        <div className={Style.comtainer_header_p1}>
           <h3>Create Tracking</h3>
           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elitae ad, quibusdam nostrum.</p>
         </div>
-        <div>
+        <div   className={Style.comtainer_header_p2}>
           <p onClick={()=> setCreateShipmentModel(true)}
-            href={"#"}>
+            href={"#"}
+          >
               Add Tracking
             </p>
         </div>
       </div>
 
-      <div>
+      <div className={Style.table_container}>
         <table>
           <thead>
             <tr>
-              <th>Sender</th>
-              <th>Receiver</th>
-              <th>PickupTime</th>
-              <th>Distance</th>
-              <th>Price</th>
-              <th>Distance</th>
-              <th>Price</th>
-              <th>Delivery Time</th>
-              <th>Paid</th>
-              <th>Status</th>
+              <th className={Style.table_th}>Sender</th>
+              <th className={Style.table_th}>Receiver</th>
+              <th className={Style.table_th}>PickupTime</th>
+              <th className={Style.table_th}>Distance</th>
+              <th className={Style.table_th}>Price</th>
+              <th className={Style.table_th}>Distance</th>
+              <th className={Style.table_th}>Price</th>
+              <th className={Style.table_th}>Delivery Time</th>
+              <th className={Style.table_th}>Paid</th>
+              <th className={Style.table_th}>Status</th>
             </tr>
           </thead>
 

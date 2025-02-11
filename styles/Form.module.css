@@ -1,0 +1,25 @@
+
+
+.container{
+    display: flex;
+    background-color: green;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.form_container{
+    display: flex;
+    background-color: white;
+    width: 40%;
+    padding-top: 30px;
+    justify-content: center;
+    align-items: center;
+
+}
+.container_form{
+    display: grid;
+    justify-content: center;
+    align-items: centers;
+}

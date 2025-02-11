@@ -1,0 +1,58 @@
+.container{
+    padding-left: 44px;
+    padding-right: 44px;
+    width: 100%;
+}
+
+.container_header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.comtainer_header_p2 p{
+    padding: 7px;    
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.table_container{
+    width: 100%;
+
+}
+
+.table_container table{
+    width: 100%;
+}
+
+.table_container table thead{
+    width: 100%;
+    background-color: rgb(166, 157, 157);
+    border-radius: 5px;
+
+
+}
+
+
+.table_container table thead tr{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;  
+    padding-top: 20px;
+    padding-bottom: 20px;  
+    /* background-color: yellow; */
+    
+}
+
+.table_th{
+    /* padding: 20px; */
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
