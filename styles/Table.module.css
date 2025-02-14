@@ -8,6 +8,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    
 }
 
 .comtainer_header_p2 p{
@@ -20,39 +21,44 @@
 
 .table_container{
     width: 100%;
+    border: 1px solid  rgb(166, 157, 157);
+    border-radius: 5px;
+    
 
 }
 
 .table_container table{
     width: 100%;
+    border-collapse: collapse;
+
 }
 
 .table_container table thead{
-    width: 100%;
+    width: 500px;
     background-color: rgb(166, 157, 157);
+    border: 1px solid rgb(166, 157, 157);
     border-radius: 5px;
-
+    text-align: left;
+    
 
 }
 
 
-.table_container table thead tr{
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding-left: 30px;
-    padding-right: 30px;  
-    padding-top: 20px;
-    padding-bottom: 20px;  
-    /* background-color: yellow; */
+.table_container table tbody{
+    width: 500px;
+    background-color: rgb(200, 189, 189);
     
 }
 
+
+.table_container table  tr{
+    /* border: 1px solid black; */
+}
+
 .table_th{
-    /* padding: 20px; */
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 20px;
+    word-wrap: break-word;
+    white-space: normal; /* Ensures that text inside cells wraps correctly */
+    overflow: hidden;
 
 }

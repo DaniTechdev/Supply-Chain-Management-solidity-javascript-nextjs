@@ -24,41 +24,79 @@ export const TrackingProvider = ({children})=>{
 
     const [currentUser, setCurrentUser] = useState("");
 
-    const createShipment = async (items)=>{
-        console.log(items);
+    // const createShipment = async (items)=>{
+    //     console.log("items",items);
 
-        const {receiver,pickupTime, distance, price} = items;
+    //     const {receiver,pickupTime, distance, price} = items;
 
+    //     try {
+    //         const web3Modal = new Web3Modal();
+    //         const connection =  await web3Modal.connect();
+    //         const provider = new ethers.providers.Web3Provider(connection);
+    //         const signer = provider.getSigner();
+    //         const contract = fetchContract(signer);
+
+    //         console.log("Contract", contract);
+            
+
+
+    //         const createItem =  await contract.completeShipment(
+    //             receiver,
+    //             new Date(pickupTime).getTime(),
+    //             distance,
+    //             ethers.utils.parseUnits(price, 18),
+    //             {
+    //                 value: ethers.utils.parseUnits(price, 18),
+    //             }
+    //         );
+
+    //         await createItem.wait();
+    //         console.log(createItem);
+            
+
+
+            
+    //     } catch (error) {
+    //         console.log("Some went wrong", error);
+            
+    //     }
+        
+    // }
+
+    const createShipment = async (items) => {
+        console.log("items", items);
+    
+        const { receiver, pickupTime, distance, price } = items;
+    
         try {
             const web3Modal = new Web3Modal();
-            const connection =  await web3Modal.connect();
+            const connection = await web3Modal.connect();
             const provider = new ethers.providers.Web3Provider(connection);
             const signer = provider.getSigner();
             const contract = fetchContract(signer);
-
-
-            const createItem =  await contract.completeShipment(
-                receiver,
-                new Data(pickupTime).getTime(),
-                distance,
-                ethers.utils.parseUnits(price, 18),
-                {
-                    value: ethers.utils.parseUnits(price, 18)
-                }
+    
+            // console.log("Contract", contract);
+    
+            // Ensure the price is parsed correctly to match the contract's expectations
+            const priceInWei = ethers.utils.parseUnits(price, 18);
+    
+            // Pass all 4 arguments and the 'value' as part of the transaction options
+            const createItem = await contract.createShipment(
+                receiver,                        // _receiver (address)
+                new Date(pickupTime).getTime(),   // _pickupTime (uint256)
+                distance,                         // _distance (uint256)
+                priceInWei,                       // _price (uint256)
+                { value: priceInWei }   // Make sure the value matches _price
             );
-
+    
             await createItem.wait();
-            console.log(createItem);
-            
-
-
-            
+            // console.log(createItem);
+    
         } catch (error) {
-            console.log("Some went wrong", error);
-            
+            console.log("Something went wrong", error);
         }
-        
-    }
+    };
+    
 
 
 
@@ -68,21 +106,36 @@ export const TrackingProvider = ({children})=>{
                //Since I am retreiving data from the contract I don"t 
         // need to make a connecting as done in createShipment function
 
-        const provider = await ethers.providers.JsonRpcProvider();
-        const contract = fetchContract(provider);
+        // const provider = await ethers.providers.JsonRpcProvider();
+        // const contract = fetchContract(provider);
+            const web3Modal = new Web3Modal();
+            const connection = await web3Modal.connect();
+            const provider = new ethers.providers.Web3Provider(connection);
+            const signer = provider.getSigner();
+            const contract = fetchContract(signer);
+
+            console.log("contract", contract);
+            
 
 
-        const shipments =  await contract.getAllTranactions();
+        const shipments =  await contract.getAllTranactions(); 
+
+
+        console.log("Shipment", shipments);
+        
         
         const allSshipment = shipments.map((shipment)=>({
             sender:shipment.sender,
             receiver:shipment.receiver,
             price: ethers.utils.formatEther(shipment.price.toString()),
+            distance:shipment.distance.toNumber(),
             pickupTime:shipment.pickupTime.toNumber(),
             deliveryTime: shipment.deliveryTime.toNumber(),
             isPaid:shipment.isPaid,
             status:shipment.status
         }))
+
+        return allSshipment;
             
         } catch (error) {
             console.log("error in getting shipment");
@@ -90,6 +143,8 @@ export const TrackingProvider = ({children})=>{
         }
 
     }
+
+    // getAllShipment()
 
 
     const getShipmentsCount = async()=>{
@@ -155,7 +210,7 @@ export const TrackingProvider = ({children})=>{
     }
 
 
-    const getShipment =  async()=>{
+    const getShipment =  async(index)=>{
         console.log(index * 1);
 
         try {

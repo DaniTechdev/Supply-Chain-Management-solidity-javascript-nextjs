@@ -1,0 +1,101 @@
+.container{
+    display: flex;
+    position: fixed;
+    inset: 0;
+    /* align-items: center; */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0,0,0, 0.7);
+}
+
+.container_modal{
+    position: absolute;
+    background-color: white;
+    width: 45%;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+
+}
+
+.container_modal_inner{
+   
+    width: 100%;
+    /* position: relative; */
+    margin-top: 60px;
+}
+.button{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 20px;
+    top: 20px;
+}
+
+.container_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.container_heading{
+    font: 800;
+    font-size: larger;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+.container_form form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+
+.container_form form input{
+ width: 70%;
+ padding: 8px;
+ margin-bottom: 5px;
+ border-radius: 5px;
+ outline: none;
+ border: 1px solid gray;
+}
+
+.container_form form button{
+    width: 70%;
+    padding: 8px;
+    text-align: center;
+    font-size: 13px;
+    background-color: rgb(63, 63, 244);
+    color: white;
+    border: none;
+    border-radius: 5px;
+
+}
+
+.container_ship_details{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    width: 70%;
+   
+}
+
+.container_ship_details p{
+    display: flex;
+    /* flex-direction: column; */
+    /* width: 70%; */
+    /* align-items: center; */
+    padding: 8px;
+    margin-bottom: 10px;
+
+}

@@ -1,0 +1,69 @@
+.container_overlay {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  inset: 0;
+}
+
+/* position: absolute;
+background-color: white;
+width: 45%;
+border: 1px solid white;
+border-radius: 5px;
+margin-bottom: 10px; */
+
+.container_form {
+  /* position: absolute; */
+  width: 45%;
+  border: 1px solid white;
+  background-color: white;
+  height: fit-content;
+  position: relative;
+  border-radius: 5px;
+}
+
+.container_button button {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.container_body {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.container_body form {
+  width: 70%;
+  display: grid;
+  gap: 5px;
+}
+.container_body input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  border: 1px solid rgb(239, 227, 227);
+}
+
+.container_body form button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  border: 1px solid rgb(239, 227, 227);
+  background-color: rgb(61, 61, 224);
+  color: white;
+}
